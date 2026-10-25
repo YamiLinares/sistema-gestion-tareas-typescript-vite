@@ -1,0 +1,31 @@
+# Dependencias
+node_modules/
+
+# Compilación
+dist/
+*.tsbuildinfo
+
+# Variables de entorno (la aplicación no necesita ninguna)
+.env
+.env.*
+
+# Registros
+*.log
+npm-debug.log*
+
+# Archivos temporales y reportes locales
+*.tmp
+.cache/
+coverage/
+e2e-output/
+gitleaks-report*.json
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Instrucciones locales de herramientas
+AGENTS.md
+CLAUDE.md
