@@ -4,4 +4,8 @@ import "./styles/layout.css";
 import "./styles/components.css";
 
 import { TaskApp } from "./app";
-new TaskApp().start();
+import { TaskStorage } from "./services/task-storage";
+import { TaskStore } from "./services/task-store";
+
+const store = new TaskStore(new TaskStorage());
+new TaskApp(store).start();

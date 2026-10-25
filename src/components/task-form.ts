@@ -151,6 +151,9 @@ export class TaskForm {
   };
 
   private readonly handleClose = (): void => {
+    // El evento `close` llega de forma asíncrona: si el diálogo ya se volvió a
+    // abrir (p. ej. para editar otra tarea), no hay que limpiar el formulario nuevo.
+    if (this.dialog.open) return;
     this.form.reset();
     this.clearErrors();
     this.editingId = null;

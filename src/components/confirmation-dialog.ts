@@ -35,6 +35,8 @@ export class ConfirmationDialog {
       this.dialog.close("cancel");
     });
     dialog.addEventListener("close", () => {
+      // Ignora un cierre antiguo si el diálogo ya se abrió para otra confirmación.
+      if (dialog.open) return;
       this.resolve?.(dialog.returnValue === "confirm");
       this.resolve = null;
       this.returnFocus?.focus();
